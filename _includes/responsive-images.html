@@ -1,0 +1,44 @@
+{% if include.type %}
+  {% assign title = page.images[image_index].title %}
+  {% assign link = page.url %}
+  {% assign normal = page.images[image_index].url %}
+  {% assign mobile = page.images[image_index].url %}
+{% else %}
+  {% assign title = include.title %}
+  {% assign link = include.link %}
+  {% capture normal %}
+    {{ site.url }}{{ include.normal }}
+  {% endcapture %}
+  {% capture mobile %}
+    {{ site.url }}{{ include.mobile }}
+  {% endcapture %}
+{% endif %}
+
+
+<figure>
+  {% if link != "" %}
+    <a href="{{ link }}" title="{{ title }}">
+  {% endif %}
+
+  <div data-picture data-alt="{{ title }}">
+    <div data-src="{{ normal }}"></div>
+    <div data-src="{{ mobile }}" data-media="(max-width: 768px)"></div>
+    <noscript>
+      <img src="{{ normal }}" alt="{{ title }}">
+    </noscript>
+  </div>
+    
+  {% if link != '' %}
+    </a>
+  {% endif %}
+  
+  <figcaption>
+    {% if link != "" %}
+      <a href="{{ link }}" title="{{ title }}">
+    {% endif %}
+    {{ title }}
+    {% if link != '' %}
+      </a>
+    {% endif %}
+  </figcaption>
+</figure>

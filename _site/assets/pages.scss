@@ -1,0 +1,85 @@
+html {
+  body {
+    #header, #main, #footer {
+      border-bottom: $border-thin;
+    }
+    
+    #header {
+      p {
+        padding-bottom: $pad/8;
+      }
+      
+      nav {
+        margin-top: $pad;
+      }
+    }
+    
+    #main {
+      #thumbs {
+        article {
+          height: $pad*10;
+                    
+          figure {
+            display: none;
+          }
+          
+          #category {
+            @include font-monospace;
+            
+            position: relative;
+            top: $pad*11;
+          }
+          
+          &.occrp {
+            background: url(/assets/occrp3.png);
+          }
+          
+          &.reboot {
+            background: url(/assets/reboot3.png);
+          }
+          
+          &.anvelocom {
+            background: url(/assets/anvelocom-2.png);
+          }
+          
+          &.scatter {
+            background: url(/assets/scatter-2.png);
+          }
+          
+          &.ttf {
+            background: url(/assets/ttf2.png);
+          }
+          
+          &.smuff {
+            background: url(/assets/smuff-2.png);
+          }
+          
+          &.inu-chivu {
+            background: url(/assets/inu2.png);
+          }
+          
+          &.ceu {
+            background: url(/assets/ceu2.png);
+          }
+          
+          &.languagelab {
+            background: url(/assets/languagelab2.png);
+          }
+          
+          &.scrol {
+            background: url(/assets/scrol2.png);
+          }
+          
+          &.brandyou {
+            background: url(/assets/brandyou2.png);
+          }
+        }
+      }
+    }
+    
+    /* Single item of the portfolio
+    */
+    &.page {
+    }
+  }
+}

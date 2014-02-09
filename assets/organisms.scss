@@ -1,0 +1,37 @@
+/* An article
+  - displays mostly article thumbs
+*/
+@mixin article($figure: yes, $figcaption: null, $title: null, $excerpt: null, $body: null) {
+  
+  @if ($title == null) {
+    h1 {
+      display: none ;
+    }
+  }
+  
+  @if ($figure == null) {
+    figure {
+      display: none;
+    }
+  }
+  
+  @if ($figcaption == null) {
+    figcaption {
+      display: none;
+    }
+  }
+  
+  @if ($excerpt == null) {
+    #excerpt {
+      display: none;
+    }
+  }
+  
+  @if ($body == null) {
+    #body {
+      display: none;
+    }
+  }
+  
+}
+

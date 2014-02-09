@@ -1,0 +1,86 @@
+html {
+  body {
+    @include default-settings;
+    
+    #header, #main, #footer {
+      @include block;
+      @include container;
+      margin: $pad 0;
+    }
+    
+    section, nav, aside {
+      @include hide-title;
+    }
+    
+    #header {
+      hgroup, nav {
+        width: auto;
+        float: left;
+      }
+      
+      nav {
+        float: right;
+      }
+    }
+    
+    #main {
+      #thumbs {
+        article {
+          @include responsive-grid(3);
+          @include article;
+        }
+      }
+    }
+    
+    #footer {
+      ul {
+        li {
+          @include responsive-grid(3);
+          @include body-text;
+          height: $pad*10;
+          
+          figure {
+            width: $pad*6;
+            float: left;
+            margin-right: $pad;
+          }
+        }
+      }
+    }
+    
+    /* Portfolio item
+    */
+    &.page {
+      #main {
+        margin-top: 0;
+        
+        img {
+          //visibility: hidden;
+        }
+        
+        #desktop {
+          //background: $highlight url(/assets/stripe.png);
+        }
+        
+        #responsive {
+          @include block;
+          margin: 5% 0;
+          
+          p {
+            margin-top: $pad;
+          }
+          
+          #smartphone {
+            @include col(30%, 5%);
+            //background: $green url(/assets/stripe-1.png);
+          }
+          
+           #tablet {
+            @include col(65%);
+            //background: $lila url(/assets/stripe-1.png);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,135 @@
+html {
+  body {
+    #header {
+      nav ul li {
+        @include circle($pad);
+        border: none;
+        @include invert;
+        font-size: 200%;
+        
+        font-weight: bold;
+        font-style: italic;
+        font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+        
+        cursor: pointer;
+        
+        &:hover {
+          @include border-radius(0);
+        }
+      }
+    }
+    
+    #footer {
+      @include invert;
+      padding: $container-margin $container-margin 0;
+    }
+    
+    #main {
+      #thumbs {
+        article {
+          min-height: 30em;
+          background-image: url(/assets/stripe-1.png);
+          
+          /* Hide and show thumbnails
+          */
+          figure {
+            div {
+              position: relative;
+              z-index: -1;
+            }
+          }
+          
+          &:hover, &.scatter, &.ttf, &.scrol {
+            
+            figure {
+              div {
+                z-index: 1;
+              }
+            }
+          }
+          
+          
+          
+          /* Thumbnail info
+          */
+          figcaption {
+            position: relative;
+            display: block;
+            
+            a {
+              color: $background;
+              background: $green;
+              padding: $pad;
+              text-transform: uppercase;
+              font-weight: bold;
+            }
+          }
+          
+          figcaption, #category {
+            padding: $pad/4;
+            padding-bottom: 0;
+          }
+          
+          #category {
+            margin-top: $pad;
+          }
+          
+          
+          
+          
+          
+          &.occrp {
+            background: $highlight url(/assets/stripe.png);
+          }
+          
+          &.reboot {
+            background-color: $green; 
+          }
+          
+          &.anvelocom {
+            background-color: $lila;
+          }
+          
+          &.scatter {
+            background: $red;
+          }
+          
+          &.ttf {
+            background: $yellow;
+            
+            figcaption {
+              a {
+                color: $highlight;
+              }
+            }
+          }
+          
+          &.smuff {
+            background: $brown;
+          }
+          
+          &.inu-chivu {
+            background-color: $green2;
+          }
+          
+          &.ceu {
+            background-color: $blue;
+          }
+          
+          &.scrol {
+            background: $color;
+          }
+          
+          &.languagelab {
+            background: $lila url(/assets/stripe.png);
+          }
+          
+          &.brandyou {
+            background: none;
+          }
+        }
+      }
+    }
+    
+  }
+}
